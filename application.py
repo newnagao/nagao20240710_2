@@ -28,23 +28,23 @@ def textread():
     reading_txt += unit
     
 #出力ファイル名
-#  output_file_path = "files/"
+  output_file_path = "files/"
   output_file_name = "test.mp3"
-#  output_file = output_file_path + output_file_name
-#  download_switch = "<a href=\"/download/" + output_file_name + "\" download=\"" + output_file_name + "\">ここから音声ファイルがダウンロードできます。</a>"
+  output_file = output_file_path + output_file_name
+  download_switch = "<a href=\"/download/" + output_file_name + "\" download=\"" + output_file_name + "\">ここから音声ファイルがダウンロードできます。</a>"
 
 
 #リクエスト送信バッチファイル取得
-  command = "sh " + bat_file + " " + reading_txt + " " + output_file_name
+  command = "sh " + bat_file + " " + reading_txt + " " + output_file
   result = subprocess.run(command, shell=True)
 
-  return jsonify("ファイルのダウンロードができました")
+  return jsonify(download_switch)
 
 
 #ダウンロードリンク押下時
-#@app.route('/download/<string:file>')
-#def download(file):
-#    return send_from_directory('files', file, as_attachment=True)
+@app.route('/download/<string:file>')
+def download(file):
+    return send_from_directory('files', file, as_attachment=True)
 
 if __name__ == "__main__":
   app.run(debug=True)
