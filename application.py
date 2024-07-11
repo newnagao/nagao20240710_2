@@ -31,7 +31,7 @@ def textread():
   output_file_path = "files/"
   output_file_name = "test.mp3"
   output_file = output_file_path + output_file_name
-  download_switch = "<a href=\"/download/" + output_file_name + "\" download=\"" + output_file_name + "\">ここから音声ファイルがダウンロードできます。</a>"
+  download_switch = "<a href=\"/download/" + output_file_name + "\" download=\"\'test.mp3\'\$\'\\r\'\">ここから音声ファイルがダウンロードできます。</a>"
 
 
 #リクエスト送信バッチファイル取得
