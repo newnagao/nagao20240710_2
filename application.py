@@ -31,7 +31,9 @@ def textread():
   output_file_path = "files/"
   output_file_name = "test.mp3"
   output_file = output_file_path + output_file_name
-  download_switch = "<a href=\"" + output_file + "\" download=\"" + output_file_name + "\">ここから音声ファイルがダウンロードできます。</a>"
+  audio_url = "https://test00001app.azurewebsites.net/download/" + output_file_name 
+  #download_switch = "<a href=\"" + output_file + "\" download=\"" + output_file_name + "\">ここから音声ファイルがダウンロードできます。</a>"
+  download_switch = "<audio controls src=" + audio_url + "></audio>"
 
 
 #リクエスト送信バッチファイル取得
