@@ -35,7 +35,7 @@ def textread():
 
 
 #リクエスト送信バッチファイル取得
-  command = "./" + bat_file + " " + reading_txt + " " + output_file_name
+  command = "sh " + bat_file + " " + reading_txt + " " + output_file_name
   result = subprocess.run(command, shell=True)
 
   return jsonify("ファイルのダウンロードができました")
