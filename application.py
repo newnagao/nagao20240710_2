@@ -38,10 +38,8 @@ def textread():
   command = "./" + bat_file + " " + reading_txt + " " + output_file_name
   result = subprocess.run(command, shell=True)
 
-  if os.path.isfile(output_file):
-	  return jsonify("ファイルのダウンロードができました")
-  else :
-      return jsonify("ファイルの作成に失敗しました")
+  return jsonify("ファイルのダウンロードができました")
+
 
 #ダウンロードリンク押下時
 #@app.route('/download/<string:file>')
