@@ -39,8 +39,9 @@ def textread():
 #リクエスト送信バッチファイル取得
   command = "sh " + bat_file + " " + reading_txt + " " + output_file
   result = subprocess.run(command, shell=True)
+　result2 = subprocess.run("ls -l", shell=True)
 
-  return jsonify(download_switch)
+  return jsonify(download_switch + " dir: " + result2)
 
 
 #ダウンロードリンク押下時
