@@ -1,5 +1,6 @@
 #Note: The openai-python library support for Azure OpenAI is in preview.
 
+import os
 import subprocess
 from flask import Flask, request, jsonify, render_template
 
@@ -39,9 +40,9 @@ def textread():
 #リクエスト送信バッチファイル取得
   command = "sh " + bat_file + " " + reading_txt + " " + output_file
   result = subprocess.run(command, shell=True)
-　result2 = subprocess.run("ls -l", shell=True)
+　crd = os.getcwd()
 
-  return jsonify(download_switch + " dir: " + result2)
+  return jsonify(download_switch + " dir: " + crd)
 
 
 #ダウンロードリンク押下時
